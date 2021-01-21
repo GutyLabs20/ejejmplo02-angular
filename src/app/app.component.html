@@ -1,46 +1,39 @@
 <div class="container mt-3">
+
   <div class="row">
 
-  <div class="col-md-5">
-    <div class="card">
-      <div class="card-body">
-        <h3 class="card-title">Ingresar Usuario</h3>
+    <div class="col-md-5">
+      <div class="card">
+        <div class="card-body">
+          <h3 class="card-title">Ingresar Usuario</h3>
 
-        <form>
-          <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1">
-          </div>
-          <div class="form-group form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Check me out</label>
-          </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
+          <form action="#">
+            <div class="form-group">
+              <label for="nombre">Nombre: </label>
+              <input type="text" class="form-control" id="nombre" name="nombre" [(ngModel)]="actual.nombre" placeholder="Ingrese nombre">
+            </div>
+            <div class="form-group">
+              <label for="pais">Pais: </label>
+              <input type="text" class="form-control" id="pais" name="pais" [(ngModel)]="actual.pais" placeholder="Ingrese País">
+            </div>
 
+            <button type="submit" class="btn btn-primary" (click)="registrar();">Agregar</button>
+          </form>
+
+        </div>
       </div>
     </div>
-  </div>
 
 
     <div class="col-md-7">
 
-      <ul class="list-group m-4">
-        <li class="list-group-item">Cras justo odio</li>
-        <li class="list-group-item">Dapibus ac facilisis in</li>
-        <li class="list-group-item">Morbi leo risus</li>
-        <li class="list-group-item">Porta ac consectetur ac</li>
-        <li class="list-group-item">Vestibulum at eros</li>
+      <ul class="list-group">
+        <li class="list-group-item" *ngFor="let empleado of empleados; index as i">
+          <span class="badge badge-primary p-2">{{ i+1 }}</span> - {{ empleado.nombre }} - {{ empleado.pais }}
+        </li>
       </ul>
 
     </div>
-
-
 
   </div>
 </div>
