@@ -10,6 +10,8 @@ export class AppComponent {
 
   posicion: number = -1;
 
+  title = "Registro de Empleado";
+
   actual:Empleado = new Empleado();
 
   empleados = [
@@ -25,7 +27,10 @@ export class AppComponent {
     } else {
       this.empleados[this.posicion].nombre = this.actual.nombre;
       this.empleados[this.posicion].pais = this.actual.pais;
+
     }
+
+    this.actual = new Empleado();
 
   }
 
@@ -35,7 +40,7 @@ export class AppComponent {
       this.empleados[indice].nombre,
       this.empleados[indice].pais);
     this.posicion = indice;
-    
+
   }
 
 }
