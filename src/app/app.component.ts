@@ -29,4 +29,13 @@ export class AppComponent {
 
   }
 
+  presentarEmpleado(indice: number): void {
+
+    this.actual = new Empleado(
+      this.empleados[indice].nombre,
+      this.empleados[indice].pais);
+    this.posicion = indice;
+    
+  }
+
 }

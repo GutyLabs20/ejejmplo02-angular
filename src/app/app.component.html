@@ -30,6 +30,10 @@
       <ul class="list-group">
         <li class="list-group-item" *ngFor="let empleado of empleados; index as i">
           <span class="badge badge-primary p-2">{{ i+1 }}</span> - {{ empleado.nombre }} - {{ empleado.pais }}
+          &nbsp;&nbsp;
+          <div class="btn-group" role="group" aria-label="Basic example">
+            <button type="button" (click)="presentarEmpleado(i);" class="btn btn-warning">Editar</button>
+          </div>
         </li>
       </ul>
 
